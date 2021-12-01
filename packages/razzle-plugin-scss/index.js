@@ -140,7 +140,7 @@ module.exports = {
               sassLoader,
             ]
           : [
-              opts.env.dev ? styleLoader : MiniCssExtractPlugin.loader,
+              (opts.env.dev && !razzleOptions.staticCssInDev) ? styleLoader : MiniCssExtractPlugin.loader,
               cssLoader,
               postCssLoader,
               resolveUrlLoader,
